@@ -63,3 +63,48 @@
 //     return skill === 'UX Design';
 // });
 // skills_holder.innerHTML = myPrimarySkill;
+
+// classes
+// const data = document.getElementById('data');
+// class Siswa {
+//     constructor(username, password, id_kelas) {
+//         this.username = username;
+//         this.password = password;
+//         this.id_kelas = id_kelas;
+//     }
+//     gabung() {
+//         console.log(this.username + 'telah bergabung pada kelas' + this.id_kelas)
+//     }
+// }
+
+// let tambahSiswa = new Siswa('bwastudio', '230fsdf', 12);
+// tambahSiswa.gabung();
+
+// Inheritance
+const data = document.getElementById('data');
+class Siswa {
+    constructor(username, password, nama_kelas) {
+        this.username = username;
+        this.password = password;
+        this.nama_kelas = nama_kelas;
+    }
+    gabung() {
+        console.log(this.username + 'telah bergabung pada kelas' + this.nama_kelas)
+    }
+    static hitungMember() {
+        console.log('Tersedia 100 member')
+    }
+}
+
+class Langganan extends Siswa {
+    constructor(username, paket) {
+        super(username);
+        this.paket = paket;
+    }
+    gabungPaket() {
+        console.log('Hi ' + this.username + ' telah langganan paket ' + this.paket);
+    }
+}
+
+let tambahLangganan = new Langganan('bwastudio', 'Premium');
+tambahLangganan.hitungMember();
